@@ -9,45 +9,225 @@ Original file is located at
 
 import streamlit as st
 import random
-
 excuses = [
-    "is logique… dans mon monde.",
-    "J’ai une idée… risquée.",
-    "Le mystère reste entier… comme moi.",
-    "Je suis prêt… presque.",
-    "J’ai une théorie du chaos… appliquée.",
-    "Rien n’a de sens, donc relax.",
-    "Je suis sérieux… parfois involontairement.",
-    "J’ai une intuition… contradictoire.",
-    "Le problème me suit, je le guide.",
-    "Je suis clair… pour moi.",
-    "J’ai une réponse… incorrecte.",
-    "Le doute m’accompagne.",
-    "Je suis en évolution… lente.",
-    "J’ai une idée… dangereuse.",
-    "Tout est flou, donc parfait."
+"Je suis logique… dans mon monde.",
+"J’ai une idée… risquée.",
+"Le mystère reste entier… comme moi.",
+"Je suis prêt… presque.",
+"J’ai une théorie du chaos… appliquée.",
+"Rien n’a de sens, donc relax.",
+"Je suis sérieux… parfois involontairement.",
+"J’ai une intuition… contradictoire.",
+"Le problème me suit, je le guide.",
+"Je suis clair… pour moi.",
+"J’ai une réponse… incorrecte.",
+"Le doute m’accompagne.",
+"Je suis en évolution… lente.",
+"J’ai une idée… dangereuse.",
+"Tout est flou, donc parfait.",
+"J’ai suivi mon intuition… elle m’a perdu.",
+"Si tout a un sens, le mien est probablement en congé.",
+"Je pense donc je bug.",
+"Le silence est d’or, sauf quand c’est gênant.",
+"J’ai essayé d’être normal… pire décision.",
+"Rien ne sert de courir, surtout sans chaussures.",
+"Mon futur moi me regarde avec déception.",
+"J’ai une logique… mais elle est personnelle.",
+"Le chaos, mais organisé.",
+"Je réfléchis, donc j’évite d’agir.",
+"Si la vie est un test, j’ai oublié de réviser.",
+"Je suis en avance sur mon retard.",
+"Tout est sous contrôle… sauf moi.",
+"Je doute, donc j’existe… peut-être.",
+"Le plan était parfait, jusqu’au début.",
+"J’ai compris… mais trop tard.",
+"Le hasard fait mal les choses.",
+"J’avance, mais dans quelle direction ?",
+"J’ai une idée… mauvaise, mais une idée.",
+"Le futur appartient à ceux qui se lèvent… ou pas.",
+"Je suis multitâche : je rate plusieurs choses à la fois.",
+"J’ai confiance en moi, mais pas trop.",
+"Si ça marche, c’est suspect.",
+"J’ai perdu le fil… et le pull entier.",
+"L’important, c’est d’avoir l’air sûr.",
+"Je fais de mon mieux… c’est déjà inquiétant.",
+"J’ai une stratégie : improviser.",
+"Le doute est ma seule certitude.",
+"Je suis presque prêt… depuis hier.",
+"Si ça rate, c’était prévu.",
+"J’ai un plan B… qui est aussi mauvais que le A.",
+"Je pense trop pour agir assez.",
+"Je suis calme… extérieurement.",
+"Le problème, c’est la solution.",
+"J’ai réfléchi… j’aurais pas dû.",
+"Tout va bien, c’est juste bizarre.",
+"J’ai oublié ce que je devais faire, donc je ne le fais pas.",
+"Je suis motivé… à ne rien faire.",
+"Le mystère, c’est moi.",
+"J’ai une théorie… inutile.",
+"Si ça a du sens, c’est louche.",
+"Je suis cohérent… dans l’absurde.",
+"Je fais confiance au hasard, il ne me déçoit jamais.",
+"J’ai une réponse… mais pas la question.",
+"Rien ne va, donc tout va.",
+"Je suis logique, mais pas aujourd’hui.",
+"Le temps passe, moi aussi.",
+"Je suis là… c’est déjà ça.",
+"J’ai une idée brillante… dans le noir.",
+"Je comprends mieux quand je ne comprends pas.",
+"Je suis sérieux, mais pas longtemps.",
+"Le problème, c’est que ça marche.",
+"J’ai un talent caché… bien caché.",
+"Je suis en réflexion permanente.",
+"Si ça semble simple, c’est faux.",
+"J’ai presque compris, donc non.",
+"Je fais semblant d’avoir un plan.",
+"Le futur est flou, comme moi le matin.",
+"J’ai essayé… ça suffit.",
+"Tout est possible, surtout le pire.",
+"Je suis en progrès… lent.",
+"J’ai une méthode : éviter.",
+"Je suis organisé… dans ma tête.",
+"Le hasard me connaît bien.",
+"Je suis prêt à improviser.",
+"Rien n’est clair, parfait.",
+"J’ai un objectif… vague.",
+"Je suis en mission… inconnue.",
+"J’ai une logique alternative.",
+"Tout est relatif, surtout moi.",
+"Je suis là pour une raison… je cherche encore.",
+"J’ai une direction… floue.",
+"Le plan évolue… sans moi.",
+"J’ai compris l’essentiel… je l’ai oublié.",
+"Je suis stable… parfois.",
+"J’ai une idée fixe… elle bouge.",
+"Le chaos me va bien.",
+"Je suis en pause… permanente.",
+"J’ai une vision… brouillée.",
+"Rien ne change, donc tout change.",
+"Je suis cohérent… à ma façon.",
+"J’ai une certitude… temporaire.",
+"Je suis en avance… sur rien.",
+"Le doute est confortable.",
+"J’ai une solution… compliquée.",
+"Je suis logique… dans mon monde.",
+"J’ai une idée… risquée.",
+"Le mystère reste entier… comme moi.",
+"Je suis prêt… presque.",
+"J’ai une théorie du chaos… appliquée.",
+"Rien n’a de sens, donc relax.",
+"Je suis sérieux… parfois involontairement.",
+"J’ai une intuition… contradictoire.",
+"Le problème me suit, je le guide.",
+"Je suis clair… pour moi.",
+"J’ai une réponse… incorrecte.",
+"Le doute m’accompagne.",
+"Je suis en évolution… lente.",
+"J’ai une idée… dangereuse.",
+"Tout est flou, donc parfait."
 ]
-
 
 memes = [
-    "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",  # cerveau en feu
-    "https://media.giphy.com/media/3o6Zt6ML6BklcajjsA/giphy.gif", # WTF
-    "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif",  # stupéfait
-    "https://media.giphy.com/media/l41lFw057lAJQMwg0/giphy.gif", # ohlala
-    "https://media.giphy.com/media/3oKIPwoeGErMmaI43C/giphy.gif", # LOL
-    "https://media.giphy.com/media/xUPGcA7vT2sZl4eyko/giphy.gif", # mind blown
+"https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
+"https://media.giphy.com/media/1hMhlrWWfXU77iYnBB/giphy.gif",
+"https://media.giphy.com/media/YWb3YoY8TolYuMpRc8/giphy.gif",
+"https://media.giphy.com/media/joV1k1sNOT5xC/giphy.gif",
+"https://media.giphy.com/media/f7iXSQOy6boys/giphy.gif",
+"https://media.giphy.com/media/LpkBAUDg53FI8xLmg1/giphy.gif",
+"https://media.giphy.com/media/iOGROlDst8AKOfs2ix/giphy.gif",
+"https://media.giphy.com/media/1jARfPtdz7eE0/giphy.gif",
+"https://media.giphy.com/media/ToMjGpKniGqRNLGBrhu/giphy.gif",
+"https://media.giphy.com/media/GyRX93ai5DdsI/giphy.gif",
+"https://media.giphy.com/media/26FmQ6EOvLxp6cWyY/giphy.gif",
+"https://media.giphy.com/media/3o6ZsYJd1ivX2hsRQA/giphy.gif",
+"https://media.giphy.com/media/3o7abB06u9bNzA8lu8/giphy.gif",
+"https://media.giphy.com/media/xUPGcguWZHRC2HyBRS/giphy.gif",
+"https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif",
+"https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif",
+"https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif",
+"https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif",
+"https://media.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.gif",
+"https://media.giphy.com/media/ntL1P7x1C04RY/giphy.gif",
+"https://media.giphy.com/media/10SvWCbt1ytWCc/giphy.gif",
+"https://media.giphy.com/media/l0MYB8Ory7Hqefo9a/giphy.gif",
+"https://media.giphy.com/media/3o7btNhMBytxAM6YBa/giphy.gif",
+"https://media.giphy.com/media/3ov9jJ4GZP3Ndq3u4g/giphy.gif",
+"https://media.giphy.com/media/12XMGIWtrHBl5e/giphy.gif",
+"https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif",
+"https://media.giphy.com/media/3o6Mbbs879ozZ9Yic0/giphy.gif",
+"https://media.giphy.com/media/26BRuo6sLetdllPAQ/giphy.gif",
+"https://media.giphy.com/media/1BXa2alBjrCXC/giphy.gif",
+"https://media.giphy.com/media/l46CkATpdyLwLI7vi/giphy.gif",
+"https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif",
+"https://media.giphy.com/media/26DNXKie8L97y2OLe/giphy.gif",
+"https://media.giphy.com/media/3o7aD4MZxGzA96u5uw/giphy.gif",
+"https://media.giphy.com/media/l41lTW671KTmFaJX6/giphy.gif",
+"https://media.giphy.com/media/3o7qE1YN7aBOFPRw8E/giphy.gif",
+"https://media.giphy.com/media/26uf9QPzzlKPvQG5W/giphy.gif",
+"https://media.giphy.com/media/1ys7VJazQJdRe/giphy.gif",
+"https://media.giphy.com/media/3o7TKSlLGOXZGOfmes/giphy.gif",
+"https://media.giphy.com/media/l2Je1TIDGzQZ6c2pG/giphy.gif",
+"https://media.giphy.com/media/3o6ZsX7E6wx6w/giphy.gif",
+"https://media.giphy.com/media/xT8qBepJQX1sDVp0V2/giphy.gif",
+"https://media.giphy.com/media/1dIo31qk7N3HD/giphy.gif",
+"https://media.giphy.com/media/3o7aCWv6pfUH0vVmWk/giphy.gif",
+"https://media.giphy.com/media/10hO3rDNqqg2Xe/giphy.gif",
+"https://media.giphy.com/media/l2JhJhhQKs9mmy7uY/giphy.gif",
+"https://media.giphy.com/media/3o6ZtpxSZbQRRnwCKQ/giphy.gif",
+"https://media.giphy.com/media/l41lI4bYmcsPJX9Go/giphy.gif",
+"https://media.giphy.com/media/3oEjHP8ELRNNlnlLGM/giphy.gif",
+"https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif",
+"https://media.giphy.com/media/L0Qp6RAMwOIvM/giphy.gif",
+"https://media.giphy.com/media/3oz8xS67xj2h5wfQ2E/giphy.gif",
+"https://media.giphy.com/media/l0ErLeqamzM1c6Sso/giphy.gif",
+"https://media.giphy.com/media/1d5O0tFjbm2lrFFb3/giphy.gif",
+"https://media.giphy.com/media/3o7TKUlwQYvff11lPe/giphy.gif",
+"https://media.giphy.com/media/xT9DPpf0zTqRASyzTi/giphy.gif",
+"https://media.giphy.com/media/l41YtZOb9EUABnuqA/giphy.gif",
+"https://media.giphy.com/media/3o6ZtefVltNcO/giphy.gif",
+"https://media.giphy.com/media/l4pTfx2qLszoacZRS/giphy.gif",
+"https://media.giphy.com/media/3o7aD4WSbmjbP0RtLu/giphy.gif",
+"https://media.giphy.com/media/1zK7bknDwAqZc/giphy.gif",
+"https://media.giphy.com/media/3o6ZsXjP0Wg8M/giphy.gif",
+"https://media.giphy.com/media/26AOSho1a9kSPg/giphy.gif",
+"https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif",
+"https://media.giphy.com/media/3ohhwmOU48Vjr8SZC0/giphy.gif",
+"https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif",
+"https://media.giphy.com/media/l4HodBpDmoMA5p9b0/giphy.gif",
+"https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif",
+"https://media.giphy.com/media/3o85xIO33l7R4TPv8g/giphy.gif",
+"https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif",
+"https://media.giphy.com/media/3o6gbbuLW76jkt8vIc/giphy.gif",
+"https://media.giphy.com/media/xT39CT8dYhLQ6c/giphy.gif",
+"https://media.giphy.com/media/3o6ZthKQ4sJMdp/giphy.gif",
+"https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif",
+"https://media.giphy.com/media/3o7aCcXhYJ1sQ/giphy.gif",
+"https://media.giphy.com/media/LrThu/giphy.gif",
+"https://media.giphy.com/media/13R0IQG7f2tC/giphy.gif",
+"https://media.giphy.com/media/3o6ZsX4duKZZ/giphy.gif",
+"https://media.giphy.com/media/l2JJKs6L1pNlXg/giphy.gif",
+"https://media.giphy.com/media/xUPGcl7fV9mW8S/giphy.gif",
+"https://media.giphy.com/media/3ohhwF34cGDoFFhTz/giphy.gif",
+"https://media.giphy.com/media/l41lFw057lAJQMwg0/giphy.gif",
+"https://media.giphy.com/media/3o6Yg3E2oFBcXxX6/giphy.gif"
 ]
 
+
+# --- CSS pour centrer tout et style global ---
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
-html, body, [class*="css"]  {
+html, body, [class*="css"] {
     font-family: 'Comic Neue', cursive;
 }
 .stApp {
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     color: #333;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     padding-top: 50px;
 }
 button[kind="primary"] {
@@ -56,20 +236,24 @@ button[kind="primary"] {
     font-size: 20px;
     border-radius: 12px;
     padding: 10px 20px;
+    display: block;
+    margin: 0 auto;
 }
 </style>
 """, unsafe_allow_html=True)
 
-# --- Titre ---
+# --- Titre centré ---
 st.markdown("<h1 style='text-align: center; color: #ff4b5c;'>Choix du Jour, ta citation! 😂</h1>", unsafe_allow_html=True)
 
+# --- Bouton centré pour générer la citation ---
 if st.button("🎲 Nouveau choix!"):
     quote = random.choice(excuses)
     meme = random.choice(memes)
 
-
-    st.image(meme, width=300)
-
+    # Centre le meme
+    st.markdown(f"<div style='text-align: center; margin-top: 20px;'><img src='{meme}' width='300'></div>", unsafe_allow_html=True)
+    
+    # Centre la citation dans une carte stylisée
     st.markdown(
         f"""
         <div style="
@@ -81,6 +265,8 @@ if st.button("🎲 Nouveau choix!"):
             font-weight: bold;
             color: #333;
             box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+            margin: 20px auto;
+            max-width: 600px;
         ">
             {quote}
         </div>
